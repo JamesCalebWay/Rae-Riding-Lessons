@@ -29,10 +29,10 @@
         <!-- Navigation menu addapted from https://www.w3schools.com/howto/howto_js_topnav_responsive.asp -->
         <div class='topnav' id='myTopnav'>
             <a href='index.php' style="float: left">Rae Riding Lessons</a>
-            <?php loginButton() ?>
-            <a href='about.php' class="active">About</a>
-            <a href='lesson.php'>Schedule A Lesson</a>
             <a href='index.php'>Home</a>
+            <a href='lesson.php'>Schedule A Lesson</a>
+            <a href='about.php' class="active">About</a>
+            <?php loginButton() ?>
             <a href='javascript:void(0);' class='icon' onclick='myFunction()'>
                 <i class='fa fa-bars'></i>
             </a>
@@ -41,17 +41,14 @@
 
         <br><br><br> <!--new-->
         <div class="w3-container"> <!--trying to add a box model to contain content-->
-        <h1 style="text-align: center">About</h1>
-        <img src="Rae Riding Lessons Logo.png" alt="close up of horse face with someone on its back" style="width:500px;height:600px;">
-        <p class='paragraph'>Hi! I'm Rae, the Lead Trainer and owner of Rae Riding Lessons.
-             Here at this business, we want to build special relationships with the horses and the clients.
-              We offer group lessons for beginners, intermediate, and advance!
-               If you're not too comfortable with a group or would like to have a more one on one time with learning on how to ride horses, 
-               then we offer appointments for singles too and would be happy to help and meet your needs.
-               If you would like to contact us for more information or to ask questions, you can contact us with the information listed below.</p>
+        <center><h1>About</h1></center>
+        <center><p class='paragraph'>Welcome to the Home of Rae and her horses.
+             You can go to the About page to learn all about Rae and her business.
+              If you're thinking of wanting to schedule a lesson then jump right into the login page where you can create an account.
+               If you would like to contact us for more information or to ask questions, you can contact us with the information listed below.</p></center>
                <div class="footer">
             <!-- This is where the contact info is-->
-            <p class="paragraph">
+            <center><p class="paragraph">
               Contact Info:
               <br>
               raeRidingLessons@admin.com
@@ -63,7 +60,7 @@
               Copyright 2022 by Blue Team. All Rights Reserved
               <br>
               Terms & Conditions      |      Privacy
-              </p>
+              </p></center>
         
           <!--Will create link text to show privacy and terms of use  -->
           </div>

@@ -9,6 +9,13 @@
     // Checks if user is logged in.
     $user_data = check_login($con);
 
+    if ($user_data['admin'] != 1)
+    {
+        // Redirect to login.
+        echo "<script> location.href='http://raeridinglessons.infinityfreeapp.com/index.php'; </script>";
+        exit;
+    }
+
     if ($_SERVER['REQUEST_METHOD'] == "POST")
         {
             $title = $_POST['title'];
@@ -56,11 +63,11 @@
         <!-- Navigation menu addapted from https://www.w3schools.com/howto/howto_js_topnav_responsive.asp -->
         <div class='topnav' id='myTopnav'>
             <a href='index.php' style="float: left">Rae Riding Lessons</a>
-            <a href='http://raeridinglessons.infinityfreeapp.com/functions/logout.php'>Logout</a>
-            <a href='http://raeridinglessons.infinityfreeapp.com/adminProfile.php' class="active"> Admin Profile</a>
-            <a href='about.php'>About</a>
-            <a href='lesson.php'>Schedule A Lesson</a>
             <a href='index.php'>Home</a>
+            <a href='lesson.php'>Schedule A Lesson</a>
+            <a href='about.php'>About</a>
+            <a href='http://raeridinglessons.infinityfreeapp.com/functions/logout.php'>Logout</a>
+            <a href='http://raeridinglessons.infinityfreeapp.com/adminProfile.php' class="active">Admin</a>
             <a href='javascript:void(0);' class='icon' onclick='myFunction()'>
                 <i class='fa fa-bars'></i>
             </a>
@@ -68,11 +75,38 @@
         <!-- End Navigation Menu -->
 
         <br><br><br>
-        <div class="w3-container">
-        <h1style="text-align: center">Admin Profile</h1>
+        <center><h1>Admin</h1></center>
     
         <br><br><br>
         <?php calendar() ?>
+
+        <br><br><br>
+        <div class="usertable">
+                <?php
+                    $query = "SELECT * FROM `users`";
+
+                    $result = mysqli_query($con,$query);
+
+                    echo "<table class='table'>
+                            <th>Name</th>
+                            <th>Phone</th>
+                            <th>Email</th>
+                            <th>Address</th>
+                            <th>Level</th>";
+                    while ($row = mysqli_fetch_array($result, MYSQLI_ASSOC))
+                    {
+                        echo "<tr class='userInfo'>";
+                        echo "<td>", $row['first_name'], " ", $row['last_name'], "</td>";
+                        echo "<td>", $row['phone'], "</td>";
+                        echo "<td>", $row['email'], "</td>";
+                        echo "<td>", $row['address'], " ", $row['city'], ", ", $row['state'], " ", $row['zip'], "</td>";
+                        echo "<td>", $row['level'], "</td>";
+                        echo "</tr>";
+                    }
+                    echo "</table>";
+                ?>
+        </div>
+
 
         <div id="box">
          <form method="POST">
@@ -96,25 +130,6 @@
 
             <input id="button" type="submit" value="Submit"><br><br>
          </form>
-        </div>
-
-        <div class="footer">
-            <!-- This is where the contact info is-->
-                <p class="paragraph">
-                Contact Info:
-                <br>
-                raeRidingLessons@admin.com
-                <br>
-                (843)-867-5309
-                <br>
-                 325 Some Address Ln., North Charleston, SC, 29405
-                 <br> <br> <br>
-                Copyright 2022 by Blue Team. All Rights Reserved
-                <br>
-                Terms & Conditions      |      Privacy
-                </p>
-            <!--Will create link text to show privacy and terms of use  -->
-            </div>
-        </div>
+      </div>
     </body>
 </html>
