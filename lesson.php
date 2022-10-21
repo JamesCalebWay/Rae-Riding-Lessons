@@ -30,10 +30,10 @@
         <!-- Navigation menu addapted from https://www.w3schools.com/howto/howto_js_topnav_responsive.asp -->
         <div class='topnav' id='myTopnav'>
             <a href='index.php' style="float: left">Rae Riding Lessons</a>
-            <a href='index.php'>Home</a>
-            <a href='lesson.php' class="active">Schedule A Lesson</a>
-            <a href='about.php'>About</a>
             <?php loginButton() ?>
+            <a href='about.php'>About</a>
+            <a href='lesson.php' class="active">Schedule A Lesson</a>
+            <a href='index.php'>Home</a>
             <a href='javascript:void(0);' class='icon' onclick='myFunction()'>
                 <i class='fa fa-bars'></i>
             </a>
@@ -43,14 +43,11 @@
         <br><br><br>
         <div class="w3-container"> <!--trying to add a box model to contain content-->
 
-            <center><h1>Schedule A Lesson</h1></center>
-    
-            <br><br><br>
-            <?php calendar() ?>
+        <h1 style="text-align: center">Schedule A Lesson</h1>
 
             <div class="footer">
             <!-- This is where the contact info is-->
-                <center><p class="paragraph">
+                <p class="paragraph">
                 Contact Info:
                 <br>
                 raeRidingLessons@admin.com
@@ -62,9 +59,12 @@
                 Copyright 2022 by Blue Team. All Rights Reserved
                 <br>
                 Terms & Conditions      |      Privacy
-                </p></center>
+                </p>
             <!--Will create link text to show privacy and terms of use  -->
           </div>
+    
+        <br><br><br>
+        <?php calendar() ?>
         </div>
     </body>
 </html>

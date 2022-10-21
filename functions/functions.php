@@ -70,8 +70,20 @@
 
         if ($user_data = check_login2($con)) // Checks if user is logged in.
         {
-            echo "<a href='http://raeridinglessons.infinityfreeapp.com/functions/logout.php'>Logout</a>";
-            echo "<a href='http://raeridinglessons.infinityfreeapp.com/userProfile.php'>Profile</a>";
+            if ($user_data['admin'] == 0) // Checks if normal user.
+            {
+                echo "<a href='http://raeridinglessons.infinityfreeapp.com/functions/logout.php'>Logout</a>";
+                echo "<a href='http://raeridinglessons.infinityfreeapp.com/userProfile.php'>Profile</a>";
+            }
+            else if ($user_data['admin'] == 1) // Checks if user is admin.
+            {
+                echo "<a href='http://raeridinglessons.infinityfreeapp.com/functions/logout.php'>Logout</a>";
+                echo "<a href='http://raeridinglessons.infinityfreeapp.com/adminProfile.php'>Admin</a>";
+            }
+            else
+            {
+                echo "You done broke all the things!";
+            }
         }
         else
         {

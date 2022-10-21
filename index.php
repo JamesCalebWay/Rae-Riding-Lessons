@@ -29,10 +29,10 @@
         <!-- Navigation menu addapted from https://www.w3schools.com/howto/howto_js_topnav_responsive.asp -->
         <div class='topnav' id='myTopnav'>
             <a href='index.php' style="float: left">Rae Riding Lessons</a>
-            <a href='index.php' class="active">Home</a>
-            <a href='lesson.php'>Schedule A Lesson</a>
-            <a href='about.php'>About</a>
             <?php loginButton() ?>
+            <a href='about.php'>About</a>
+            <a href='lesson.php'>Schedule A Lesson</a>
+            <a href='index.php' class="active">Home</a>
             <a href='javascript:void(0);' class='icon' onclick='myFunction()'>
                 <i class='fa fa-bars'></i>
             </a>
@@ -42,16 +42,16 @@
         <!--TO DO: need to fix the text when resizing window -->
         <br><br><br> <!--new-->
         <div class="w3-container"> <!--trying to add a box model to contain content-->
-          <center><h1>Home</h1></center>
+          <h1 style="text-align: center">Home</h1>
           <h2 class='h2Edits'>NewsFeed</h2>
-          <center><p class='paragraph'>Welcome to the Home of Rae and her horses.
+          <p class='paragraph'>Welcome to the Home of Rae and her horses.
              You can go to the About page to learn all about Rae and her business.
               If you're thinking of wanting to schedule a lesson then jump right into the login page where you can create an account.
-               If you would like to contact us for more information or to ask questions, you can contact us with the information listed below.</p></center>
+               If you would like to contact us for more information or to ask questions, you can contact us with the information listed below.</p>
 
           <div class="footer">
             <!-- This is where the contact info is-->
-            <center><p class="paragraph">
+            <p class="paragraph">
               Contact Info:
               <br>
               raeRidingLessons@admin.com
@@ -63,7 +63,7 @@
               Copyright 2022 by Blue Team. All Rights Reserved
               <br>
               Terms & Conditions      |      Privacy
-              </p></center>
+              </p>
         
           <!--Will create link text to show privacy and terms of use  -->
           </div>

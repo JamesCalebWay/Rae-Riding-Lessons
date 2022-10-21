@@ -131,5 +131,24 @@
             <input id="button" type="submit" value="Submit"><br><br>
          </form>
       </div>
+        
+        <div class="footer">
+            <!-- This is where the contact info is-->
+                <p class="paragraph">
+                Contact Info:
+                <br>
+                raeRidingLessons@admin.com
+                <br>
+                (843)-867-5309
+                <br>
+                 325 Some Address Ln., North Charleston, SC, 29405
+                 <br> <br> <br>
+                Copyright 2022 by Blue Team. All Rights Reserved
+                <br>
+                Terms & Conditions      |      Privacy
+                </p>
+            <!--Will create link text to show privacy and terms of use  -->
+            </div>
+        </div>
     </body>
 </html>

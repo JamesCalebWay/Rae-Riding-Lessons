@@ -22,6 +22,33 @@ a#back:hover
 }
 /* End---Back Button */
 
+/* Start---Scroll bar for list of users on adminProfile.php */
+div.usertable  
+{
+    margin: auto;
+    width: 80%;
+    height: 500px;
+    overflow: scroll;
+}
+
+div.usertable table
+{
+    border-collapse: collapse;
+    width: 100%;
+}
+
+div.usertable tr.userInfo:nth-child(even)
+{
+    background-color: #cccccc;
+}
+div.usertable tr.userInfo td
+{
+    padding: 8px;
+    text-align: center;
+}
+
+/* End---Scroll bar for list of users on adminProfile.php */
+
 /* was in navBar, moved to stylesheet*/
 .h2Edits /*edits the heading 2*/
 {

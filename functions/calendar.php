@@ -1,13 +1,11 @@
 <?php
     session_start();
-    
-    include("functions/lessonSelector.php");
 
     // Checks if user is logged in.
-    $user_data = check_login2($con);
+    $user_data = check_login($con);
 
     $query = "SELECT * FROM `events`";
-
+    
     $result = mysqli_query($con,$query);
     $lessonData = array();
     while ($row = mysqli_fetch_array($result, MYSQLI_ASSOC))
