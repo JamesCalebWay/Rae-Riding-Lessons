@@ -29,6 +29,7 @@
         <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css"> <!--new-->
         <link rel='stylesheet' href='http://raeridinglessons.infinityfreeapp.com/styles/popupBox.css' />
         <title>Rae Riding Lessons | Home</title>
+        <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
     </head>
 
     <body>
@@ -50,7 +51,7 @@
         <div class="w3-container"> <!--a box model to contain content-->
         <center><h1>Home</h1></center>
           <h2 class='h2Edits'>NewsFeed</h2>
-          <p>
+          <p class='h2Edits'>
             <?php
                     $newsQuery = "SELECT news FROM `users` WHERE user_id=92233";
 

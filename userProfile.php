@@ -30,6 +30,7 @@
         <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css"> <!--new-->
         <link rel='stylesheet' href='http://raeridinglessons.infinityfreeapp.com/styles/popupBox.css' />
         <title>Rae Riding Lessons | Profile</title>
+        <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
     </head>
 
     <body>
@@ -48,7 +49,7 @@
         <!-- End Navigation Menu -->
 
         <br><br><br>
-        <div class="w3-container">
+        <div class="w3-container"><!--a box model to contain content-->
         <center><h1>Profile</h1></center>
         
         <br><br><br>

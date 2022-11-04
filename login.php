@@ -69,6 +69,7 @@
       <link rel='stylesheet' href='http://raeridinglessons.infinityfreeapp.com/styles/stylesheet.css'>
       <link rel='stylesheet' href='http://raeridinglessons.infinityfreeapp.com/styles/login.css'>
       <title>Rae Riding Lessons | Login</title>
+      <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
    </head>
 
    <body>
