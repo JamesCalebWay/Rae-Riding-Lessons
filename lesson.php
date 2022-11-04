@@ -44,8 +44,7 @@
         <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css"> <!--new-->
         <link rel='stylesheet' href='http://raeridinglessons.infinityfreeapp.com/styles/popupBox.css' />
         <title>Rae Riding Lessons | Schedule A Lesson</title>
-        <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
-
+        <link rel="icon" type="image/x-icon" href="http://raeridinglessons.infinityfreeapp.com/images/favicon.ico">
     </head>
 
     <body>
@@ -68,6 +67,54 @@
         <center><h1>Schedule A Lesson</h1></center>
 
         <?php calendar() ?>
+        
+        <center>
+        <div class='lessonSelect'>
+            <form method='post'>
+            <h1>Signup for A Lesson</h1>
+        
+            Choose A Lesson To Veiw<br>
+            <?php
+                if ($user_data['level'] == "Admin") // Admin
+                {
+                  $lessonQuery = "SELECT * FROM `events`";
+                }
+                else if ($user_data['level'] == "Beginner") // Beginner
+                {
+                  $lessonQuery = "SELECT * FROM `events` WHERE level='Beginner'";
+                }
+                else if ($user_data['level'] == "Intermediate") // Intermediate
+                {
+                  $lessonQuery = "SELECT * FROM `events` WHERE level='Intermediate'";
+                }
+                else if ($user_data['level'] == "Advanced") // Advanced
+                {
+                  $lessonQuery = "SELECT * FROM `events` WHERE level='Advanced'";
+                }
+                else // Broke things
+                {
+                  echo "You suck so much you don't have a skill level!";
+                }
+
+                echo "<form id='skillForm' method='post'>
+                <select name='skillLevel'  onchange='this.form.submit()'>
+                <option disabled selected>...</option>";
+                                
+                $resultLesson = mysqli_query($con, $lessonQuery);
+                while ($lesson = mysqli_fetch_array($resultLesson, MYSQLI_ASSOC))
+                {
+                    echo "<option value='", $lesson['title'], "'>", $lesson['title'], "</option>";
+                }
+                    
+                echo "</select>
+                </form>";
+            ?>
+
+            <br>
+            <button type='submit'>Signup</button>
+            </form>
+        </div>
+        </center>
 
         <div class="footer">
             <!-- This is where the contact info is-->
