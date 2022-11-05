@@ -21,7 +21,14 @@
         $password = $_POST['password'];
 
         // Check if the user entered an email and password.
-        if (!empty($email) && !empty($password))
+        if (empty($email) || empty($password))
+        {
+            echo "Please enter information!";
+        }
+        else if (!filter_var($email, FILTER_VALIDATE_EMAIL)){
+            echo "Invalid Email Format.";
+         }
+        else
         {
             $query = "SELECT * FROM users WHERE email = '$email' LIMIT 1";
 
@@ -47,17 +54,13 @@
             {
                $emailErr = "Please enter your email";
             }
-   
+
             if (empty($_POST["password"])) 
             {
                $passwordErr = "Please Enter your password";
             }
-           
+         
             echo "Wrong email or password!";
-        }
-        else
-        {
-            echo "Please enter information!";
         }
     }
 ?>
@@ -80,10 +83,10 @@
 
             <div style="font-size: 25px; margin-bottom: 15px">Login</div>
 
-            Email<span class="error">* <?php echo $emailErr;?></span>
-            <input id="text" type="text" name="email"><br><br>
-            Password<span class="error">* <?php echo $passwordErr;?></span>
-            <input id="text" type="password" name="password"><br><br>
+            Email<span class="error"> <?php echo $emailErr;?></span>
+            <input id="text" type="text" name="email" value="<?php echo isset($_POST['email']) ? $_POST['email'] : '' ?>" required><br><br>
+            Password<span class="error"> <?php echo $passwordErr;?></span>
+            <input id="text" type="password" name="password" value="<?php echo isset($_POST['password']) ? $_POST['password'] : '' ?>" required><br><br>
 
             <input id="button" type="submit" value="Login"><br><br>
 
