@@ -1,4 +1,4 @@
-[Rae Riding Lessons](https://github.com/JamesCalebWay/Rae-Riding-Lessons))
+[Rae Riding Lessons](http://raeridinglessons.infinityfreeapp.com/)
 ===============
 
 -   **Class: CSCI 495** 
