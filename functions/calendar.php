@@ -4,25 +4,45 @@
     // Checks if user is logged in.
     $user_data = check_login($con);
 
-    if ($user_data['level'] == "Admin") // Admin
+    // Gets the current page's url.
+    $curPageName = substr($_SERVER["SCRIPT_NAME"],strrpos($_SERVER["SCRIPT_NAME"],"/")+1);  
+    $UID = $user_data['user_id'];
+
+    if ($curPageName == "lesson.php") // On lessons page.
+    {
+      // Available lessons.
+      if ($user_data['level'] == "Admin") // Admin
+      {
+        $query = "SELECT * FROM `events`";
+      }
+      else if ($user_data['level'] == "Beginner") // Beginner
+      {
+        $query = "SELECT * FROM `events` WHERE level='Beginner'";
+      }
+      else if ($user_data['level'] == "Intermediate") // Intermediate
+      {
+        $query = "SELECT * FROM `events` WHERE level='Intermediate'";
+      }
+      else if ($user_data['level'] == "Advanced") // Advanced
+      {
+        $query = "SELECT * FROM `events` WHERE level='Advanced'";
+      }
+      else // Broke things
+      {
+        echo "You suck so much you don't have a skill level!";
+      }
+    }
+    else if ($curPageName == "userProfile.php") // On profile page.
+    {
+      $query = "SELECT * FROM `events` WHERE user1='$UID' OR user2='$UID'";
+    }
+    else if ($curPageName == "adminProfile.php") // On admin page.
     {
       $query = "SELECT * FROM `events`";
     }
-    else if ($user_data['level'] == "Beginner") // Beginner
+    else
     {
-      $query = "SELECT * FROM `events` WHERE level='Beginner'";
-    }
-    else if ($user_data['level'] == "Intermediate") // Intermediate
-    {
-      $query = "SELECT * FROM `events` WHERE level='Intermediate'";
-    }
-    else if ($user_data['level'] == "Advanced") // Advanced
-    {
-      $query = "SELECT * FROM `events` WHERE level='Advanced'";
-    }
-    else // Broke things
-    {
-      echo "You suck so much you don't have a skill level!";
+      echo "Well this Sucks!";
     }
     
     $result = mysqli_query($con,$query);
