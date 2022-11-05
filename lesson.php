@@ -14,14 +14,43 @@
     {
         if ($_POST['lessonName'])
         {
+            $prevSigned = "";
             $lesson = $_POST['lessonName'];
-            $lessonQuery = "UPDATE events SET user1='$UID' WHERE title='$lesson'";
-            
-            mysqli_query($con, $lessonQuery);
+            $slotQuery = "SELECT slots, user1, user2 FROM events WHERE title='$lesson'";
+            $slots = mysqli_query($con, $slotQuery);
+            $spot = mysqli_fetch_array($slots, MYSQLI_ASSOC);
+
+            if ($spot['user1'] == $UID || $spot['user2'] == $UID)
+            {
+                $prevSigned = "You are already signed up for ";
+                $prevSigned .= $lesson;
+            }
+            else
+            {
+                if ($spot['slots'] == "one")
+                {
+                    $lessonQuery = "UPDATE events SET user1='$UID', slots='full' WHERE title='$lesson'";
+                }
+                else if ($spot['slots'] == "two")
+                {
+                    $lessonQuery = "UPDATE events SET user1='$UID', slots='half' WHERE title='$lesson'";
+                }
+                else if ($spot['slots'] == "half")
+                {
+                    $lessonQuery = "UPDATE events SET user2='$UID', slots='full' WHERE title='$lesson'";
+                }
+                else
+                {
+                    echo "Couldn't schedule lesson!";
+                    return;
+                }
+    
+                mysqli_query($con, $lessonQuery);
+            }
         }
         else
         {
-            echo "oops!";
+            $prevSigned = "Please select a lesson.";
         }
     }
 ?>
@@ -82,14 +111,10 @@
         <div class="w3-container"> <!--trying to add a box model to contain content-->
 
         <center><h1>Schedule A Lesson</h1></center>
-
-        <?php calendar() ?>
         
         <center>
         <div class='lessonSelect'>
-            <h1>Signup for A Lesson</h1>
-        
-            Choose A Lesson To Veiw<br>
+            Choose A Lesson To Take<br>
             <?php
                 if ($user_data['level'] == "Admin") // Admin
                 {
@@ -97,15 +122,15 @@
                 }
                 else if ($user_data['level'] == "Beginner") // Beginner
                 {
-                  $lessonQuery = "SELECT * FROM `events` WHERE level='Beginner'";
+                  $lessonQuery = "SELECT * FROM `events` WHERE level='Beginner' EXCEPT SELECT * FROM `events` WHERE slots='full'";
                 }
                 else if ($user_data['level'] == "Intermediate") // Intermediate
                 {
-                  $lessonQuery = "SELECT * FROM `events` WHERE level='Intermediate'";
+                  $lessonQuery = "SELECT * FROM `events` WHERE level='Intermediate' EXCEPT SELECT * FROM `events` WHERE slots='full'";
                 }
                 else if ($user_data['level'] == "Advanced") // Advanced
                 {
-                  $lessonQuery = "SELECT * FROM `events` WHERE level='Advanced'";
+                  $lessonQuery = "SELECT * FROM `events` WHERE level='Advanced' EXCEPT SELECT * FROM `events` WHERE slots='full'";
                 }
                 else // Broke things
                 {
@@ -122,12 +147,15 @@
                     echo "<option value='", $lesson['title'], "'>", $lesson['title'], "</option>";
                 }
                 echo "</select>";
-                echo "<br>
+                echo "<br><br>
                     <button type='submit'>Signup</button>
-                    </form>";
+                    <br>", $prevSigned, 
+                    "</form>";
             ?>
         </div>
         </center>
+
+        <?php calendar() ?>
 
         <div class="footer">
             <!-- This is where the contact info is-->

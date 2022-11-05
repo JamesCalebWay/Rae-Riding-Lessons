@@ -80,6 +80,9 @@
         <meta name='viewport' content='width=device-width, initial-scale=1'>
         <script type='text/javascript' src='http://raeridinglessons.infinityfreeapp.com/functions/navBar.js'></script>  
         <script type='text/javascript' src='http://raeridinglessons.infinityfreeapp.com/functions/popupBox.js'></script>
+        
+        <!-- Used for the admin lesson creating form -->
+        <link rel='stylesheet' href='http://raeridinglessons.infinityfreeapp.com/styles/login.css'>
 
         <!--needed for popup box-->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
@@ -187,10 +190,9 @@
 
         <div id="box">
          <form method="POST">
-            <br><br>
             <div style="font-size: 20px; margin: 10px">Add Lesson</div>
             
-            Lesson Type
+            Lesson Name
             <input id="text" type="text" name="title"><br><br>
             Description
             <input id="text" type="text" name="description"><br><br>
@@ -203,7 +205,15 @@
             Slots
             <input id="text" type="text" name="slots"><br><br>
             Skill Level
-            <input id="text" type="text" name="level"><br><br>
+            <!-- <input id="text" type="text" name="level"><br><br> -->
+            <div class="switch-field">
+                <input type="radio" id="radio-three" name="switch-two" value="Beginner" checked/>
+                <label for="radio-three">Beginner</label>
+                <input type="radio" id="radio-four" name="switch-two" value="Intermediate" />
+                <label for="radio-four">Intermediate</label>
+                <input type="radio" id="radio-five" name="switch-two" value="Advanced" />
+                <label for="radio-five">Advanced</label>
+            </div>
 
             <input id="button" type="submit" name="lesson" value="Submit"><br><br>
          </form>
