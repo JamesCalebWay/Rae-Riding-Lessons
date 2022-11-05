@@ -4,19 +4,19 @@ a#back
     text-decoration: none;
     display: inline-block;
     padding: 8px 16px;
-    font-size: large;
+    font-size: x-large;
     font-weight: bold;
 }
   
 a#back:hover
 {
-    background-color: rgb(245, 86, 86);
-    color: black;
+    background-color: #222227;
+    color: #eee;
 }
 
 .previous
 {
-    background-color: #f1f1f1;
+    background-color: #eee;
     color: black;
     border-radius: 50%;
 }
