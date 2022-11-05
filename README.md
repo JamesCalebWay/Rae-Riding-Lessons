@@ -4,7 +4,7 @@
 -   **Class: CSCI 495** 
 -   **Grade:** 
 -   **Language(s): HTML, CSS, JS, and PHP** 
--   **Source Code Repository:** [Rae-Riding-Lessons](https://github.com/JamesCalebWay/Rae-Riding-Lessons))  
+-   **Source Code Repository:** [Rae-Riding-Lessons](https://github.com/JamesCalebWay/Rae-Riding-Lessons)
     (Please [email me](mailto:jcway@csustudent.net?subject=GitHub%20Access) to request access.)
 
 ## Project description
