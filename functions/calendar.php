@@ -17,15 +17,15 @@
       }
       else if ($user_data['level'] == "Beginner") // Beginner
       {
-        $query = "SELECT * FROM `events` WHERE level='Beginner'";
+        $query = "SELECT * FROM `events` WHERE level='Beginner' EXCEPT SELECT * FROM `events` WHERE slots='full'";
       }
       else if ($user_data['level'] == "Intermediate") // Intermediate
       {
-        $query = "SELECT * FROM `events` WHERE level='Intermediate'";
+        $query = "SELECT * FROM `events` WHERE level='Intermediate' EXCEPT SELECT * FROM `events` WHERE slots='full'";
       }
       else if ($user_data['level'] == "Advanced") // Advanced
       {
-        $query = "SELECT * FROM `events` WHERE level='Advanced'";
+        $query = "SELECT * FROM `events` WHERE level='Advanced' EXCEPT SELECT * FROM `events` WHERE slots='full'";
       }
       else // Broke things
       {
