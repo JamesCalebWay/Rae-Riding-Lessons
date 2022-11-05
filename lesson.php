@@ -8,6 +8,22 @@
 
     // Checks if user is logged in.
     $user_data = check_login($con);
+    $UID = $user_data['user_id'];
+
+    if ($_SERVER['REQUEST_METHOD'] == "POST")
+    {
+        if ($_POST['lessonName'])
+        {
+            $lesson = $_POST['lessonName'];
+            $lessonQuery = "UPDATE events SET user1='$UID' WHERE title='$lesson'";
+            
+            mysqli_query($con, $lessonQuery);
+        }
+        else
+        {
+            echo "oops!";
+        }
+    }
 ?>
 
 <!DOCTYPE html>
@@ -43,8 +59,9 @@
         <link href='https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap' rel='stylesheet'/>
         <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css"> <!--new-->
         <link rel='stylesheet' href='http://raeridinglessons.infinityfreeapp.com/styles/popupBox.css' />
-        <title>Rae Riding Lessons | Schedule A Lesson</title>
+        <link rel='stylesheet' href='http://raeridinglessons.infinityfreeapp.com/styles/hoverBox.css' />
         <link rel="icon" type="image/x-icon" href="http://raeridinglessons.infinityfreeapp.com/images/favicon.ico">
+        <title>Rae Riding Lessons | Schedule A Lesson</title>
     </head>
 
     <body>
@@ -70,7 +87,6 @@
         
         <center>
         <div class='lessonSelect'>
-            <form method='post'>
             <h1>Signup for A Lesson</h1>
         
             Choose A Lesson To Veiw<br>
@@ -96,8 +112,8 @@
                   echo "You suck so much you don't have a skill level!";
                 }
 
-                echo "<form id='skillForm' method='post'>
-                <select name='skillLevel'  onchange='this.form.submit()'>
+                echo "<form method='post'>
+                <select name='lessonName'>
                 <option disabled selected>...</option>";
                                 
                 $resultLesson = mysqli_query($con, $lessonQuery);
@@ -105,14 +121,11 @@
                 {
                     echo "<option value='", $lesson['title'], "'>", $lesson['title'], "</option>";
                 }
-                    
-                echo "</select>
-                </form>";
+                echo "</select>";
+                echo "<br>
+                    <button type='submit'>Signup</button>
+                    </form>";
             ?>
-
-            <br>
-            <button type='submit'>Signup</button>
-            </form>
         </div>
         </center>
 

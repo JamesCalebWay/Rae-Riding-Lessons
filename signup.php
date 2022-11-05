@@ -51,7 +51,7 @@
             <a id="back" href="javascript:history.back()" class="previous">&lsaquo;</a>
             
             <br><br>
-            <div style="font-size: 20px; margin: 10px">Signup</div>
+            <div style="font-size: 25px; margin-bottom: 15px">Signup</div>
             
             First Name
             <input id="text" type="text" name="first_name"><br><br>

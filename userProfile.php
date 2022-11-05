@@ -29,8 +29,9 @@
         <link href='https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap' rel='stylesheet'/>
         <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css"> <!--new-->
         <link rel='stylesheet' href='http://raeridinglessons.infinityfreeapp.com/styles/popupBox.css' />
-        <title>Rae Riding Lessons | Profile</title>
+        <link rel='stylesheet' href='http://raeridinglessons.infinityfreeapp.com/styles/hoverBox.css' />
         <link rel="icon" type="image/x-icon" href="http://raeridinglessons.infinityfreeapp.com/images/favicon.ico">
+        <title>Rae Riding Lessons | Profile</title>
     </head>
 
     <body>

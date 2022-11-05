@@ -78,7 +78,7 @@
             <a id="back" href="javascript:history.back()" class="previous">&lsaquo;</a>
             <br><br>
 
-            <div style="font-size: 20px; margin: 10px">Login</div>
+            <div style="font-size: 25px; margin-bottom: 15px">Login</div>
 
             Email<span class="error">* <?php echo $emailErr;?></span>
             <input id="text" type="text" name="email"><br><br>
