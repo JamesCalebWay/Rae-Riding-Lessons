@@ -90,4 +90,18 @@
             echo "<a href='http://raeridinglessons.infinityfreeapp.com/login.php'>Login</a>";
         }
     }
+
+    function addNote(userID)
+    {
+        $query = "INSERT INTO users (notes) VALUE note WHERE user_id = userID";
+    
+        echo "
+            <form action='addNote()'>
+                <input type='text' name='note'>
+                    <textarea name='note' id='text'>
+                        Leave A Note!
+                    </textarea>
+                <input id='button' type='submit' value='Submit'>
+            </form>";
+    }
 ?>

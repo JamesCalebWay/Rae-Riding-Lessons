@@ -4,7 +4,7 @@
     // Checks if user is logged in.
     $user_data = check_login($con);
 
-    if ($user_data['admin'] == 1) // Admin
+    if ($user_data['level'] == "Admin") // Admin
     {
       $query = "SELECT * FROM `events`";
     }
@@ -125,7 +125,8 @@
 
     for (let x = firstDayIndex; x > 0; x--) {
         var lessonName = dateSelctor((prevLastDay - x + 1), (date.getMonth()), date.getFullYear());
-        days += `<div class='prev-date'>${prevLastDay - x + 1}<br>${lessonName}</div>`;
+        var description = lessonDescription((prevLastDay - x + 1), (date.getMonth()), date.getFullYear());
+        days += `<div class='prev-date tooltip'><span class='tooltiptext'>${description}</span>${prevLastDay - x + 1}<br>${lessonName}</div>`;
     }
 
     for (let i = 1; i <= lastDay; i++) {
@@ -134,16 +135,19 @@
         date.getMonth() === new Date().getMonth()
         ) {
         var lessonName = dateSelctor(i, (date.getMonth() + 1), date.getFullYear());
-        days += `<div class='today'>${i}<br>${lessonName}</div>`;
+        var description = lessonDescription(i, (date.getMonth() + 1), date.getFullYear());
+        days += `<div class='today tooltip'><span class='tooltiptext'>${description}</span>${i}<br>${lessonName}</div>`;
         } else {
           var lessonName = dateSelctor(i, (date.getMonth() + 1), date.getFullYear());
-          days += `<div>${i}<br>${lessonName}</div>`;
+          var description = lessonDescription(i, (date.getMonth() + 1), date.getFullYear());
+          days += `<div class='tooltip'><span class='tooltiptext'>${description}</span>${i}<br>${lessonName}</div>`;
         }
     }
 
     for (let j = 1; j <= nextDays; j++) {
         var lessonName = dateSelctor(j, (date.getMonth() + 2), date.getFullYear());
-        days += `<div class='next-date'>${j}<br>${lessonName}</div>`;
+        var description = lessonDescription(j, (date.getMonth() + 2), date.getFullYear());
+        days += `<div class='next-date tooltip'><span class='tooltiptext'>${description}</span>${j}<br>${lessonName}</div>`;
       }
       monthDays.innerHTML = days;
     };
@@ -175,6 +179,27 @@
             && Ldate.substring(0, 4) == year) // YYYY-MM-DD
       {
         return Ltitle;
+      }
+    }
+    
+    return "";
+  }
+
+  function lessonDescription(date, month, year)
+  {
+    var lesson_data = <?php echo json_encode($lessonData); ?>;
+    let fLen = lesson_data.length;
+
+    for (let i = 0; i < fLen; i++)
+    {
+      var Ldate = lesson_data[i].date;
+      var Ldescription = lesson_data[i].description;
+      var Ltime = lesson_data[i].start_time + '—' + lesson_data[i].end_time;
+
+      if (Ldate.substring(8, 10) == date && Ldate.substring(5, 7) == month
+            && Ldate.substring(0, 4) == year) // YYYY-MM-DD
+      {
+        return Ldescription + '\n' + Ltime;
       }
     }
     
