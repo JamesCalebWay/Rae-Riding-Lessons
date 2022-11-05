@@ -3,7 +3,7 @@
 
 -   **Class: CSCI 495** 
 -   **Grade:** 
--   **Language(s): HTML, CSS, JS, and PHP** 
+-   **Language(s): HTML, CSS, JS, PHP, and MySQL**
 -   **Source Code Repository:** [Rae-Riding-Lessons](https://github.com/JamesCalebWay/Rae-Riding-Lessons)
     (Please [email me](mailto:jcway@csustudent.net?subject=GitHub%20Access) to request access.)
 
@@ -38,4 +38,4 @@ Fig 3. Feedback when an error occurs.
 
 ## 3. Additional Considerations
 
-Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. 
+[Rae Riding Lessons](http://raeridinglessons.infinityfreeapp.com/) is hosted by [InfinityFree](https://www.infinityfree.net/). The back end utilizes MySQL Databases which is also hosted by InfinityFree.
