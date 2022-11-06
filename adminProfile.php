@@ -109,8 +109,7 @@
     <body>
         <!-- Navigation menu addapted from https://www.w3schools.com/howto/howto_js_topnav_responsive.asp -->
         <div class='topnav' id='myTopnav'>
-            <a href='index.php' style="float: left"><img src=images\RaeLogo.png alt="Rae Riding Lessons" style="width:200px; height:30px;"></img></a> <!-- resized-->
-            <a href='http://raeridinglessons.infinityfreeapp.com/functions/logout.php'>Logout</a>
+            <a href='index.php' style="float: left"><img src="http://raeridinglessons.infinityfreeapp.com/images/RaeLogo.png" alt="Rae Riding Lessons" style="width:200px; height:30px;"></img></a> <!-- resized-->            <a href='http://raeridinglessons.infinityfreeapp.com/functions/logout.php'>Logout</a>
             <a href='http://raeridinglessons.infinityfreeapp.com/adminProfile.php' class="active">Admin</a>
             <a href='about.php'>About</a>
             <a href='lesson.php'>Schedule A Lesson</a>
@@ -195,28 +194,34 @@
 
         <div id="box">
          <form method="POST">
-            <div style="font-size: 20px; margin: 10px">Add Lesson</div>
+            <div style="font-size: 25px; margin-bottom: 15px">Add Lesson</div>
             
-            Lesson Name
+            Title
             <input id="text" type="text" name="title"><br><br>
             Description
             <input id="text" type="text" name="description"><br><br>
             Date
-            <input id="text" type="text" name="date"><br><br>
+            <input id="text" type="date" name="date"><br><br>
             Start Time
-            <input id="text" type="text" name="start_time"><br><br>
+            <input id="text" type="time" name="start_time"><br><br>
             End time
-            <input id="text" type="text" name="end_time"><br><br>
+            <input id="text" type="time" name="end_time"><br><br>
             Slots
-            <input id="text" type="text" name="slots"><br><br>
+            <!-- <input id="text" type="text" name="slots"><br><br> -->
+            <div id="slots" class="switch-field">
+                <input type="radio" id="radio-one" name="slots" value="one" checked/>
+                <label for="radio-one">Solo Lesson</label>
+                <input type="radio" id="radio-two" name="slots" value="two" />
+                <label for="radio-two">Group Lesson</label>
+            </div>
             Skill Level
             <!-- <input id="text" type="text" name="level"><br><br> -->
-            <div class="switch-field">
-                <input type="radio" id="radio-three" name="switch-two" value="Beginner" checked/>
+            <div id="skill" class="switch-field">
+                <input type="radio" id="radio-three" name="level" value="Beginner" checked/>
                 <label for="radio-three">Beginner</label>
-                <input type="radio" id="radio-four" name="switch-two" value="Intermediate" />
+                <input type="radio" id="radio-four" name="level" value="Intermediate" />
                 <label for="radio-four">Intermediate</label>
-                <input type="radio" id="radio-five" name="switch-two" value="Advanced" />
+                <input type="radio" id="radio-five" name="level" value="Advanced" />
                 <label for="radio-five">Advanced</label>
             </div>
 

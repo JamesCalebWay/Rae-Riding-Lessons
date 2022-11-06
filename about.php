@@ -30,7 +30,7 @@
         <link rel='stylesheet' href='http://raeridinglessons.infinityfreeapp.com/styles/popupBox.css' />
         <link rel="icon" type="image/x-icon" href="http://raeridinglessons.infinityfreeapp.com/images/favicon.ico">
         <title>Rae Riding Lessons | About</title>
-        +        
+        
         <!--Font style-->
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -40,8 +40,7 @@
     <body>
         <!-- Navigation menu addapted from https://www.w3schools.com/howto/howto_js_topnav_responsive.asp -->
         <div class='topnav' id='myTopnav'>
-            <a href='index.php' style="float: left"><img src=images\RaeLogo.png alt="Rae Riding Lessons" style="width:200px; height:30px;"></img></a> <!-- resized-->
-            <?php loginButton() ?>
+            <a href='index.php' style="float: left"><img src="http://raeridinglessons.infinityfreeapp.com/images/RaeLogo.png" alt="Rae Riding Lessons" style="width:200px; height:30px;"></img></a> <!-- resized-->            <a href='http://raeridinglessons.infinityfreeapp.com/functions/logout.php'>Logout</a>
             <a href='about.php' class="active">About</a>
             <a href='lesson.php'>Schedule A Lesson</a>
             <a href='index.php'>Home</a>
