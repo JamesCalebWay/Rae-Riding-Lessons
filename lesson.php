@@ -101,7 +101,7 @@
     <body>
         <!-- Navigation menu addapted from https://www.w3schools.com/howto/howto_js_topnav_responsive.asp -->
         <div class='topnav' id='myTopnav'>
-        <a href='index.php' style="float: left">R<img src=images\RaeRidingTitleLogo.png style="width:200px; height:50px;"></img></a> <!-- resized-->
+        <a href='index.php' style="float: left">R<img src=images\RaeLogo.png style="width:200px; height:30px;"></img></a> <!-- resized-->
             <?php loginButton() ?>
             <a href='about.php'>About</a>
             <a href='lesson.php' class="active">Schedule A Lesson</a>
