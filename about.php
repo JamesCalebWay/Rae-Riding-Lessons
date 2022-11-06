@@ -55,7 +55,7 @@
         <div class="w3-container"> <!--trying to add a box model to contain content-->
         <img src="http://raeridinglessons.infinityfreeapp.com/images/Rae%20Riding%20Lessons%20Logo-min.png" alt="close up of horse face with someone on its back" style="width:250px; height:300px;">
         <center><h1 class="h1">About</h1></center>
-        <div sytle="dispaly: inline">
+        <div style="dispaly: inline">
         <center><p class='paragraph'>Hi! I'm Rae, the Lead Trainer and owner of Rae Riding Lessons.
              Here at this business, we want to build special relationships with the horses and the clients.
               We offer group lessons for beginners, intermediate, and advance!
@@ -63,6 +63,18 @@
                then we offer appointments for singles too and would be happy to help and meet your needs.
                If you would like to contact us for more information or to ask questions, you can contact us with the information listed below.</p> </center>
         </div> <!--make the text side by side with other p tag-->
+
+        <div class="row">
+            <div class="column">
+                <img src="images\horse3.jpg" alt="Horse with fall leaves in mouth" style="width:100%">
+            </div>
+            <div class="column">
+                <img src="images\horse2.jpg" alt="Horse looking back" style="width:100%">
+            </div>
+            <div class="column">
+                <img src="images\horses1.jpg" alt="Two horses" style="width:100%">
+            </div>
+        </div>
                
             <div class="footer">
             <!-- This is where the contact info is-->
