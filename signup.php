@@ -57,23 +57,78 @@
             <div style="font-size: 25px; margin-bottom: 15px">Signup</div>
             
             First Name
-            <input id="text" type="text" name="first_name" value="<?php echo isset($_POST['first_name']) ? $_POST['first_name'] : '' ?>" required><br><br>
+            <input id="text" type="text" name="first_name" placeholder="Rae" value="<?php echo isset($_POST['first_name']) ? $_POST['first_name'] : '' ?>" required autofocus><br><br>
             Last Name
-            <input id="text" type="text" name="last_name" value="<?php echo isset($_POST['last_name']) ? $_POST['last_name'] : '' ?>" required><br><br>
+            <input id="text" type="text" name="last_name" placeholder="Lessons" value="<?php echo isset($_POST['last_name']) ? $_POST['last_name'] : '' ?>" required><br><br>
             Email
-            <input id="text" type="text" name="email" value="<?php echo isset($_POST['email']) ? $_POST['email'] : '' ?>" required><br><br>
+            <input id="text" type="text" name="email" placeholder="raeRidingLessons@admin.com" value="<?php echo isset($_POST['email']) ? $_POST['email'] : '' ?>" required><br><br>
             Phone
-            <input id="text" type="text" name="phone" value="<?php echo isset($_POST['phone']) ? $_POST['phone'] : '' ?>" required><br><br>
+            <input id="text" type="text" name="phone" placeholder="8438675309" value="<?php echo isset($_POST['phone']) ? $_POST['phone'] : '' ?>" required><br><br>
             Street Address
-            <input id="text" type="text" name="address" value="<?php echo isset($_POST['address']) ? $_POST['address'] : '' ?>" required><br><br>
+            <input id="text" type="text" name="address" placeholder="325 Some Address Ln." value="<?php echo isset($_POST['address']) ? $_POST['address'] : '' ?>" required><br><br>
             City
-            <input id="text" type="text" name="city" value="<?php echo isset($_POST['city']) ? $_POST['city'] : '' ?>" required><br><br>
+            <input id="text" type="text" name="city" placeholder="North Charleston" value="<?php echo isset($_POST['city']) ? $_POST['city'] : '' ?>" required><br><br>
             State
-            <input id="text" type="text" name="state" value="<?php echo isset($_POST['state']) ? $_POST['state'] : '' ?>" required><br><br>
+            <br>
+            <select name="state" value="<?php echo isset($_POST['state']) ? $_POST['state'] : '' ?>" required>
+               <option disabled selected>...</option>
+               <option value="AL">Alabama</option>
+               <option value="AK">Alaska</option>
+               <option value="AZ">Arizona</option>
+               <option value="AR">Arkansas</option>
+               <option value="CA">California</option>
+               <option value="CO">Colorado</option>
+               <option value="CT">Connecticut</option>
+               <option value="DE">Delaware</option>
+               <option value="DC">Washington DC</option>
+               <option value="FL">Florida</option>
+               <option value="GA">Georgia</option>
+               <option value="HI">Hawaii</option>
+               <option value="ID">Idaho</option>
+               <option value="IL">Illinois</option>
+               <option value="IN">Indiana</option>
+               <option value="IA">Iowa</option>
+               <option value="KS">Kansas</option>
+               <option value="KY">Kentucky</option>
+               <option value="LA">Louisiana</option>
+               <option value="ME">Maine</option>
+               <option value="MD">Maryland</option>
+               <option value="MA">Massachusetts</option>
+               <option value="MI">Michigan</option>
+               <option value="MN">Minnesota</option>
+               <option value="MS">Mississippi</option>
+               <option value="MO">Missouri</option>
+               <option value="MT">Montana</option>
+               <option value="NE">Nebraska</option>
+               <option value="NV">Nevada</option>
+               <option value="NH">New Hampshire</option>
+               <option value="NJ">New Jersey</option>
+               <option value="NM">New Mexico</option>
+               <option value="NY">New York</option>
+               <option value="NC">North Carolina</option>
+               <option value="ND">North Dakota</option>
+               <option value="OH">Ohio</option>
+               <option value="OK">Oklahoma</option>
+               <option value="OR">Oregon</option>
+               <option value="PA">Pennsylvania</option>
+               <option value="RI">Rhode Island</option>
+               <option value="SC">South Carolina</option>
+               <option value="SD">South Dakota</option>
+               <option value="TN">Tennessee</option>
+               <option value="TX">Texas</option>
+               <option value="UT">Utah</option>
+               <option value="VT">Vermont</option>
+               <option value="VA">Virginia</option>
+               <option value="WA">Washington</option>
+               <option value="WV">West Virginia</option>
+               <option value="WI">Wisconsin</option>
+               <option value="WY">Wyoming</option>
+            </select>
+            <br><br> 
             Zip
-            <input id="text" type="text" name="zip" value="<?php echo isset($_POST['zip']) ? $_POST['zip'] : '' ?>" required><br><br>
+            <input id="text" type="text" name="zip" placeholder="29405" value="<?php echo isset($_POST['zip']) ? $_POST['zip'] : '' ?>" required><br><br>
             Password
-            <input id="text" type="password" name="password" value="<?php echo isset($_POST['password']) ? $_POST['password'] : '' ?>" required><br><br>
+            <input id="text" type="password" name="password" placeholder="examplepassword123" value="<?php echo isset($_POST['password']) ? $_POST['password'] : '' ?>" required><br><br>
 
             <input id="button" type="submit" value="Signup"><br><br>
 

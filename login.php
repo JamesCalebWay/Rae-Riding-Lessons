@@ -84,9 +84,9 @@
             <div style="font-size: 25px; margin-bottom: 15px">Login</div>
 
             Email<span class="error"> <?php echo $emailErr;?></span>
-            <input id="text" type="text" name="email" value="<?php echo isset($_POST['email']) ? $_POST['email'] : '' ?>" required><br><br>
+            <input id="text" type="text" placeholder="raeRidingLessons@admin.com" name="email" value="<?php echo isset($_POST['email']) ? $_POST['email'] : '' ?>" required autofocus><br><br>
             Password<span class="error"> <?php echo $passwordErr;?></span>
-            <input id="text" type="password" name="password" value="<?php echo isset($_POST['password']) ? $_POST['password'] : '' ?>" required><br><br>
+            <input id="text" type="password" placeholder="examplepassword123" name="password" value="<?php echo isset($_POST['password']) ? $_POST['password'] : '' ?>" required><br><br>
 
             <input id="button" type="submit" value="Login"><br><br>
 
