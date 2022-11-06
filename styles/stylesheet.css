@@ -50,6 +50,10 @@ div.usertable tr.userInfo td
 /* End---Scroll bar for list of users on adminProfile.php */
 
 /* was in navBar, moved to stylesheet*/
+.h1{
+    font-family: 'Rye', cursive;
+}
+
 .h2Edits /*edits the heading 2*/
 {
   text-align: left;
@@ -57,6 +61,7 @@ div.usertable tr.userInfo td
   padding: 80px;
   width: 380px;
   border: 1px /*solid powderblue*/;
+  font-family: 'Rye', cursive;
 }
 
 .paragraph /*edits p in html*/
@@ -68,6 +73,7 @@ div.usertable tr.userInfo td
   width: 700px;
   border: 1px /*solid powderblue*/;
   font-size: 140%;
+  font-family: 'Rye', cursive;
 }
 
 .footer { /*shows info at bottom of page*/
@@ -77,4 +83,5 @@ div.usertable tr.userInfo td
   padding: 30px;
   top: 300px;
   border: 3px /*solid #73AD21*/;
+  font-family: 'Rye', cursive;
 }

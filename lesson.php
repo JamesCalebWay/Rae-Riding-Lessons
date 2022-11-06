@@ -91,13 +91,17 @@
         <link rel='stylesheet' href='http://raeridinglessons.infinityfreeapp.com/styles/hoverBox.css' />
         <link rel="icon" type="image/x-icon" href="http://raeridinglessons.infinityfreeapp.com/images/favicon.ico">
         <title>Rae Riding Lessons | Schedule A Lesson</title>
+                
+        <!--Font style-->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Rye&display=swap" rel="stylesheet">
     </head>
 
     <body>
         <!-- Navigation menu addapted from https://www.w3schools.com/howto/howto_js_topnav_responsive.asp -->
         <div class='topnav' id='myTopnav'>
-            <a href='index.php' style="float: left">Rae Riding Lessons</a>
-            <?php loginButton() ?>
+        <a href='index.php' style="float: left">R<img src=images\RaeRidingTitleLogo.png></img></a> <!--probably need to resize-->            <?php loginButton() ?>
             <a href='about.php'>About</a>
             <a href='lesson.php' class="active">Schedule A Lesson</a>
             <a href='index.php'>Home</a>
