@@ -64,7 +64,7 @@
                If you would like to contact us for more information or to ask questions, you can contact us with the information listed below.</p> </center>
         </div> <!--make the text side by side with other p tag-->
 
-        <div class="row">
+        <center><div class="row">
             <div class="column">
                 <img src="images\horse3.jpg" alt="Horse with fall leaves in mouth" style="width:300px; height:200px">
             </div>
@@ -74,7 +74,7 @@
             <div class="column">
                 <img src="images\horses1.jpg" alt="Two horses" style="width:300px; height:200px">
             </div>
-        </div>
+        </div> </center>
                
             <div class="footer">
             <!-- This is where the contact info is-->
