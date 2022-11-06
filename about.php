@@ -66,13 +66,13 @@
 
         <div class="row">
             <div class="column">
-                <img src="images\horse3.jpg" alt="Horse with fall leaves in mouth" style="width:100%">
+                <img src="images\horse3.jpg" alt="Horse with fall leaves in mouth" style="width:300px; height:200px">
             </div>
             <div class="column">
-                <img src="images\horse2.jpg" alt="Horse looking back" style="width:100%">
+                <img src="images\horse2.jpg" alt="Horse looking back" style="width:300px; height:200px">
             </div>
             <div class="column">
-                <img src="images\horses1.jpg" alt="Two horses" style="width:100%">
+                <img src="images\horses1.jpg" alt="Two horses" style="width:300px; height:200px">
             </div>
         </div>
                
