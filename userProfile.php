@@ -42,7 +42,7 @@
     <body>
         <!-- Navigation menu addapted from https://www.w3schools.com/howto/howto_js_topnav_responsive.asp -->
         <div class='topnav' id='myTopnav'>
-        <a href='index.php' style="float: left">R<img src=images\RaeLogo.png style="width:200px; height:30px;"></img></a> <!-- resized-->
+        <a href='index.php' style="float: left"><img src=images\RaeLogo.png alt="Rae Riding Lessons" style="width:200px; height:30px;"></img></a> <!-- resized-->
             <a href='http://raeridinglessons.infinityfreeapp.com/functions/logout.php'>Logout</a>
             <a href='http://raeridinglessons.infinityfreeapp.com/userProfile.php' class="active">Profile</a>
             <a href='about.php'>About</a>
