@@ -67,7 +67,7 @@
                 ?>
             </p>
           
-            <div sytle="dispaly: inline">
+            <div style="dispaly: inline">
           <center><p class='paragraph'>Welcome to the Home of Rae and her horses.
              You can go to the About page to learn all about Rae and her business.
               If you're thinking of wanting to schedule a lesson then jump right into the login page where you can create an account.

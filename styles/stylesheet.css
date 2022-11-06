@@ -85,3 +85,12 @@ div.usertable tr.userInfo td
   border: 3px /*solid #73AD21*/;
   font-family: 'Rye', cursive;
 }
+
+.row {
+    display: flex;
+  }
+  
+.column {
+    flex: 33.33%;
+    padding: 5px;
+  }
