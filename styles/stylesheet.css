@@ -92,5 +92,5 @@ div.usertable tr.userInfo td
   
 .column {
     flex: 33.33%;
-    padding: 2px;
+    padding: -5px;
   }
