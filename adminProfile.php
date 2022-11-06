@@ -123,7 +123,7 @@
 
         <br><br><br>
         <div class="w3-container"> <!--a box model to contain content--><!--new see if breaks-->
-        <center><h1>Admin</h1></center>
+        <center><h1 class="h1">Admin</h1></center>
     
         <br><br><br>
         <?php calendar() ?>
