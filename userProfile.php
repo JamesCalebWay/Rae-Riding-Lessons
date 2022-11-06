@@ -56,7 +56,7 @@
 
         <br><br><br>
         <div class="w3-container">
-        <center><h1>Profile</h1></center>
+        <center><h1 class="h1">Profile</h1></center>
         
         <br><br><br>
         <?php echo $user_data['first_name'], " ", $user_data['last_name'];?>

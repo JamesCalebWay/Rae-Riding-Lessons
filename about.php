@@ -54,8 +54,8 @@
         <br><br><br> <!--new-->
         <div class="w3-container"> <!--trying to add a box model to contain content-->
         <img src="http://raeridinglessons.infinityfreeapp.com/images/Rae%20Riding%20Lessons%20Logo-min.png" alt="close up of horse face with someone on its back" style="width:250px; height:300px;">
-        <center><h1>About</h1></center>
-        <div sytle="dispaly:inline">
+        <center><h1 class="h1">About</h1></center>
+        <div sytle="dispaly: inline">
         <center><p class='paragraph'>Hi! I'm Rae, the Lead Trainer and owner of Rae Riding Lessons.
              Here at this business, we want to build special relationships with the horses and the clients.
               We offer group lessons for beginners, intermediate, and advance!

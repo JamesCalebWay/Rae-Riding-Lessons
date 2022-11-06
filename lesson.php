@@ -115,7 +115,7 @@
         <br><br><br>
         <div class="w3-container"> <!--trying to add a box model to contain content-->
 
-        <center><h1>Schedule A Lesson</h1></center>
+        <center><h1 class="h1">Schedule A Lesson</h1></center>
         
         <center>
         <div class='lessonSelect'>

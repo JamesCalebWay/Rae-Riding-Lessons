@@ -54,7 +54,7 @@
         <!--Fixed: fix the text when resizing window -->
         <br><br><br> <!--new-->
         <div class="w3-container"> <!--a box model to contain content-->
-        <center><h1>Home</h1></center>
+        <center><h1 class="h1">Home</h1></center>
           <h2 class='h2Edits'>NewsFeed</h2>
           <p class='h2Edits'>
             <?php
@@ -67,7 +67,7 @@
                 ?>
             </p>
           
-            <div sytle="dispaly:inline">
+            <div sytle="dispaly: inline">
           <center><p class='paragraph'>Welcome to the Home of Rae and her horses.
              You can go to the About page to learn all about Rae and her business.
               If you're thinking of wanting to schedule a lesson then jump right into the login page where you can create an account.
