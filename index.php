@@ -28,15 +28,19 @@
         <link href='https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap' rel='stylesheet'/>
         <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css"> <!--new-->
         <link rel='stylesheet' href='http://raeridinglessons.infinityfreeapp.com/styles/popupBox.css' />
-        <title>Rae Riding Lessons | Home</title>
         <link rel="icon" type="image/x-icon" href="http://raeridinglessons.infinityfreeapp.com/images/favicon.ico">
+        <title>Rae Riding Lessons | Home</title>
+
+        <!--Font style-->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Rye&display=swap" rel="stylesheet">
     </head>
 
     <body>
         <!-- Navigation menu addapted from https://www.w3schools.com/howto/howto_js_topnav_responsive.asp -->
         <div class='topnav' id='myTopnav'>
-            <a href='index.php' style="float: left">Rae Riding Lessons</a>
-            <?php loginButton() ?>
+        <a href='index.php' style="float: left">R<img src=images\RaeRidingTitleLogo.png></img></a> <!--probably need to resize-->            <?php loginButton() ?>
             <a href='about.php'>About</a>
             <a href='lesson.php'>Schedule A Lesson</a>
             <a href='index.php' class="active">Home</a>
@@ -62,10 +66,12 @@
                 ?>
             </p>
           
+            <div sytle="dispaly:inline">
           <center><p class='paragraph'>Welcome to the Home of Rae and her horses.
              You can go to the About page to learn all about Rae and her business.
               If you're thinking of wanting to schedule a lesson then jump right into the login page where you can create an account.
                If you would like to contact us for more information or to ask questions, you can contact us with the information listed below.</p></center>
+            </div> <!--make the text side by side with other p tag-->
 
           <div class="footer">
             <!-- This is where the contact info is-->

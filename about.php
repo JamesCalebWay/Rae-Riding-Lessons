@@ -28,15 +28,19 @@
         <link href='https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap' rel='stylesheet'/>
         <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css"> <!--new-->
         <link rel='stylesheet' href='http://raeridinglessons.infinityfreeapp.com/styles/popupBox.css' />
-        <title>Rae Riding Lessons | About</title>
         <link rel="icon" type="image/x-icon" href="http://raeridinglessons.infinityfreeapp.com/images/favicon.ico">
+        <title>Rae Riding Lessons | About</title>
+        +        
+        <!--Font style-->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Rye&display=swap" rel="stylesheet">
     </head>
 
     <body>
         <!-- Navigation menu addapted from https://www.w3schools.com/howto/howto_js_topnav_responsive.asp -->
         <div class='topnav' id='myTopnav'>
-            <a href='index.php' style="float: left">Rae Riding Lessons</a>
-            <?php loginButton() ?>
+        <a href='index.php' style="float: left">R<img src=images\RaeRidingTitleLogo.png></img></a> <!--probably need to resize-->            <?php loginButton() ?>
             <a href='about.php' class="active">About</a>
             <a href='lesson.php'>Schedule A Lesson</a>
             <a href='index.php'>Home</a>
@@ -50,12 +54,14 @@
         <div class="w3-container"> <!--trying to add a box model to contain content-->
         <img src="http://raeridinglessons.infinityfreeapp.com/images/Rae%20Riding%20Lessons%20Logo-min.png" alt="close up of horse face with someone on its back" style="width:250px; height:300px;">
         <center><h1>About</h1></center>
+        <div sytle="dispaly:inline">
         <center><p class='paragraph'>Hi! I'm Rae, the Lead Trainer and owner of Rae Riding Lessons.
              Here at this business, we want to build special relationships with the horses and the clients.
               We offer group lessons for beginners, intermediate, and advance!
                If you're not too comfortable with a group or would like to have a more one on one time with learning on how to ride horses, 
                then we offer appointments for singles too and would be happy to help and meet your needs.
                If you would like to contact us for more information or to ask questions, you can contact us with the information listed below.</p> </center>
+        </div> <!--make the text side by side with other p tag-->
                
             <div class="footer">
             <!-- This is where the contact info is-->
