@@ -198,9 +198,9 @@
             <div style="font-size: 25px; margin-bottom: 15px">Add Lesson</div>
             
             Title
-            <input id="text" type="text" name="title"><br><br>
+            <input id="text" type="text" name="title" placeholder="Riding Lesson"><br><br>
             Description
-            <input id="text" type="text" name="description"><br><br>
+            <input id="text" type="text" name="description" placeholder="This lessons is about..."><br><br>
             Date
             <input id="text" type="date" name="date"><br><br>
             Start Time
@@ -211,7 +211,7 @@
             <!-- <input id="text" type="text" name="slots"><br><br> -->
             <div id="slots" class="switch-field">
                 <input type="radio" id="radio-one" name="slots" value="one" checked/>
-                <label for="radio-one">Solo Lesson</label>
+                <label for="radio-one">Private Lesson</label>
                 <input type="radio" id="radio-two" name="slots" value="two" />
                 <label for="radio-two">Group Lesson</label>
             </div>
