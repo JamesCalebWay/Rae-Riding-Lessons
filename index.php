@@ -55,6 +55,8 @@
         <br><br><br> <!--new-->
         <div class="w3-container"> <!--a box model to contain content-->
         <center><h1 class="h1">Home</h1></center>
+        <div class="row">
+            <div class="column">
           <h2 class='h2Edits'>NewsFeed</h2>
           <p class='h2Edits'>
             <?php
@@ -66,14 +68,15 @@
                     echo $newsRow['news'];
                 ?>
             </p>
-          
-            <div style="dispaly: inline">
+            </div> <!--column-->
+            <div class="column">
           <center><p class='paragraph'>Welcome to the Home of Rae and her horses.
              You can go to the About page to learn all about Rae and her business.
               If you're thinking of wanting to schedule a lesson then jump right into the login page where you can create an account.
                If you would like to contact us for more information or to ask questions, you can contact us with the information listed below.</p></center>
             </div> <!--make the text side by side with other p tag-->
-
+            </div> <!--column-->
+        </div> <!--row-->
           <div class="footer">
             <!-- This is where the contact info is-->
             <center><p class="paragraph">
