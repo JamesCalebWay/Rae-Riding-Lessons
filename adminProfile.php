@@ -35,7 +35,7 @@
                 mysqli_query($con, $query);
 
                 // Refresh Page to display any new data.
-                header("Refresh:0");
+                echo "<meta http-equiv='refresh' content='0'>";
             }
             else
             {
@@ -50,6 +50,9 @@
             $noteQuery = "UPDATE users SET notes='$note' WHERE user_id='$userIDNum'";
             
             mysqli_query($con, $noteQuery);
+
+            // Refresh Page to display any new data.
+            echo "<meta http-equiv='refresh' content='0'>";
         }
         else if ($_POST['skillLevel'])
         {
@@ -59,6 +62,9 @@
             $skillQuery = "UPDATE users SET level='$skillLevel' WHERE user_id='$userIDNumSkill'";
             
             mysqli_query($con, $skillQuery);
+
+            // Refresh Page to display any new data.
+            echo "<meta http-equiv='refresh' content='0'>";
         }
         else if ($_POST['news'])
         {
@@ -66,6 +72,9 @@
             $newsQuery = "UPDATE users SET news='$news' WHERE user_id='92233'";
             
             mysqli_query($con, $newsQuery);
+
+            // Refresh Page to display any new data.
+            echo "<meta http-equiv='refresh' content='0'>";
         }
         else
         {
@@ -127,6 +136,44 @@
     
         <br><br><br>
         <?php calendar() ?>
+
+        <br><br><br>
+        <div id="box">
+         <form method="POST">
+            <div style="font-size: 25px; margin-bottom: 15px">Add Lesson</div>
+            
+            Title
+            <input id="text" type="text" name="title" placeholder="Riding Lesson"><br><br>
+            Description
+            <input id="text" type="text" name="description" placeholder="This lessons is about..."><br><br>
+            Date
+            <input id="text" type="date" name="date"><br><br>
+            Start Time
+            <input id="text" type="time" name="start_time"><br><br>
+            End time
+            <input id="text" type="time" name="end_time"><br><br>
+            Slots
+            <!-- <input id="text" type="text" name="slots"><br><br> -->
+            <div id="slots" class="switch-field">
+                <input type="radio" id="radio-one" name="slots" value="one" checked/>
+                <label for="radio-one">Private Lesson</label>
+                <input type="radio" id="radio-two" name="slots" value="two" />
+                <label for="radio-two">Group Lesson</label>
+            </div>
+            Skill Level
+            <!-- <input id="text" type="text" name="level"><br><br> -->
+            <div id="skill" class="switch-field">
+                <input type="radio" id="radio-three" name="level" value="Beginner" checked/>
+                <label for="radio-three">Beginner</label>
+                <input type="radio" id="radio-four" name="level" value="Intermediate" />
+                <label for="radio-four">Intermediate</label>
+                <input type="radio" id="radio-five" name="level" value="Advanced" />
+                <label for="radio-five">Advanced</label>
+            </div>
+
+            <input id="button" type="submit" name="lesson" value="Submit"><br><br>
+         </form>
+      </div>
 
         <br><br><br>
         <center>
@@ -192,43 +239,6 @@
                     echo "</table>";
                 ?>
         </div>
-
-        <div id="box">
-         <form method="POST">
-            <div style="font-size: 25px; margin-bottom: 15px">Add Lesson</div>
-            
-            Title
-            <input id="text" type="text" name="title" placeholder="Riding Lesson"><br><br>
-            Description
-            <input id="text" type="text" name="description" placeholder="This lessons is about..."><br><br>
-            Date
-            <input id="text" type="date" name="date"><br><br>
-            Start Time
-            <input id="text" type="time" name="start_time"><br><br>
-            End time
-            <input id="text" type="time" name="end_time"><br><br>
-            Slots
-            <!-- <input id="text" type="text" name="slots"><br><br> -->
-            <div id="slots" class="switch-field">
-                <input type="radio" id="radio-one" name="slots" value="one" checked/>
-                <label for="radio-one">Private Lesson</label>
-                <input type="radio" id="radio-two" name="slots" value="two" />
-                <label for="radio-two">Group Lesson</label>
-            </div>
-            Skill Level
-            <!-- <input id="text" type="text" name="level"><br><br> -->
-            <div id="skill" class="switch-field">
-                <input type="radio" id="radio-three" name="level" value="Beginner" checked/>
-                <label for="radio-three">Beginner</label>
-                <input type="radio" id="radio-four" name="level" value="Intermediate" />
-                <label for="radio-four">Intermediate</label>
-                <input type="radio" id="radio-five" name="level" value="Advanced" />
-                <label for="radio-five">Advanced</label>
-            </div>
-
-            <input id="button" type="submit" name="lesson" value="Submit"><br><br>
-         </form>
-      </div>
         
       <div class="footer">
             <!-- This is where the contact info is-->

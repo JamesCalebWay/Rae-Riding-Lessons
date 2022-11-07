@@ -46,6 +46,9 @@
                 }
     
                 mysqli_query($con, $lessonQuery);
+
+                // Refresh Page to display any new data.
+                echo "<meta http-equiv='refresh' content='0'>";
             }
         }
         else
