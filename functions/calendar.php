@@ -214,7 +214,45 @@
     {
       var Ldate = lesson_data[i].date;
       var Ldescription = lesson_data[i].description;
-      var Ltime = lesson_data[i].start_time + '—' + lesson_data[i].end_time;
+      var Lstart = lesson_data[i].start_time;
+      var Lend = lesson_data[i].end_time;
+      
+      var sfront = Lstart.slice(0, -6);
+      var smid = Lstart.slice(3, -3);
+      var efront = Lend.slice(0, -6);
+      var emid = Lend.slice(3, -3);
+
+      if (sfront == 24)
+      {
+        sfront = 12;
+        smid = smid + ' AM';
+      }
+      else if (sfront > 12)
+      {
+        sfront = sfront % 12;
+        smid = smid + ' PM';
+      }
+      else
+      {
+        smid = smid + ' AM';
+      }
+
+      if (efront == 24)
+      {
+        efront = 12;
+        emid = emid + ' AM';
+      }
+      else if (efront > 12)
+      {
+        efront = efront % 12;
+        emid = emid + ' PM';
+      }
+      else
+      {
+        emid = emid + ' AM';
+      }
+      
+      var Ltime =  sfront + ':' + smid + '—' + efront + ":" + emid;
 
       if (Ldate.substring(8, 10) == date && Ldate.substring(5, 7) == month
             && Ldate.substring(0, 4) == year) // YYYY-MM-DD
