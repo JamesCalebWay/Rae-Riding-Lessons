@@ -4,38 +4,38 @@
     include("functions/connection.php");
     include("functions/functions.php");
 
-        if ($_SERVER['REQUEST_METHOD'] == "POST")
-        {
-            $first_name = $_POST['first_name'];
-            $last_name = $_POST['last_name'];
-            $email = $_POST['email'];
-            $phone = $_POST['phone'];
-            $address = $_POST['address'];
-            $city = $_POST['city'];
-            $state = $_POST['state'];
-            $zip = $_POST['zip'];
-            $password = $_POST['password'];
+   if ($_SERVER['REQUEST_METHOD'] == "POST")
+   {
+      $first_name = $_POST['first_name'];
+      $last_name = $_POST['last_name'];
+      $email = $_POST['email'];
+      $phone = $_POST['phone'];
+      $address = $_POST['address'];
+      $city = $_POST['city'];
+      $state = $_POST['state'];
+      $zip = $_POST['zip'];
+      $password = $_POST['password'];
 
-            if (empty($first_name) || empty($last_name) || empty($email) || empty($address) || empty($city) || empty($state) || empty($zip) || empty($password))
-            {
-                echo "Please enter valid information!";
-            }
-            else if (!filter_var($email, FILTER_VALIDATE_EMAIL)){
-               echo "Invalid Email Format.";
-            }
-            else
-            {
-                $user_id = random_num(20);
-                $query = "INSERT INTO users (user_id, first_name, last_name, email, phone, address, city, state, zip, password) VALUES ('$user_id', '$first_name', '$last_name', '$email', '$phone', '$address', '$city', '$state', '$zip', '$password')";
-            
-                mysqli_query($con, $query);
+      if (empty($first_name) || empty($last_name) || empty($email) || empty($address) || empty($city) || empty($state) || empty($zip) || empty($password))
+      {
+            echo "Please enter valid information!";
+      }
+      else if (!filter_var($email, FILTER_VALIDATE_EMAIL)){
+         echo "Invalid Email Format.";
+      }
+      else
+      {
+            $user_id = random_num(20);
+            $query = "INSERT INTO users (user_id, first_name, last_name, email, phone, address, city, state, zip, password) VALUES ('$user_id', '$first_name', '$last_name', '$email', '$phone', '$address', '$city', '$state', '$zip', '$password')";
+      
+            mysqli_query($con, $query);
 
-                // After user signs up they get sent to login page
-                // Log in is not automatic on signup.
-                header("Location: login.php");
-                die;
-            }
-        }
+            // After user signs up they get sent to login page
+            // Log in is not automatic on signup.
+            header("Location: login.php");
+            die;
+      }
+   }
 ?>
 
 <!DOCTYPE html>

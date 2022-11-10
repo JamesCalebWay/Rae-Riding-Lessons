@@ -8,6 +8,7 @@
 
     // Checks if user is logged in.
     $user_data = check_login($con);
+    $userIDNum = $user_data['user_id'];
 
     if ($user_data['level'] != "Admin")
     {
@@ -75,6 +76,60 @@
 
             // Refresh Page to display any new data.
             echo "<meta http-equiv='refresh' content='0'>";
+        }
+        else if ($_POST['info'])
+        {
+            // Default error messages.
+            $info_error = "";
+            $password_error = "";
+
+            $first_name = $_POST['first_name'];
+            $last_name = $_POST['last_name'];
+            $email = $_POST['email'];
+            $phone = $_POST['phone'];
+            $address = $_POST['address'];
+            $city = $_POST['city'];
+            $state = $_POST['state'];
+            $zip = $_POST['zip'];
+            $password = $_POST['password'];
+
+            if (empty($first_name) || empty($last_name) || empty($email) || empty($address) || empty($city) || empty($state) || empty($zip))
+            {
+                $info_error = "Please enter valid information!";
+            }
+            else if (!filter_var($email, FILTER_VALIDATE_EMAIL)){
+                $info_error = "Invalid Email Format.";
+            }
+            else
+            {
+                $infoQuery = "UPDATE users SET first_name='$first_name', last_name='$last_name', email='$email', phone='$phone', address='$address', city='$city', state='$state', zip='$zip' WHERE user_id='$userIDNum'";
+                
+                mysqli_query($con, $infoQuery);
+                
+                // Refresh Page to display any new data.
+                echo "<meta http-equiv='refresh' content='0'>";
+                $info_error = "Changes Saved!";
+            }
+        }
+        else if ($_POST['newPass'])
+        {
+            $password = $_POST['password'];
+            $new_password = $_POST['new_password'];
+
+            if ($password == $new_password)
+            {
+                $newPassQuery = "UPDATE users SET password='$password' WHERE user_id='$userIDNum'";
+                
+                mysqli_query($con, $newPassQuery);
+                
+                // Refresh Page to display any new data.
+                echo "<meta http-equiv='refresh' content='0'>";
+                $password_error = "Password Changed!";
+            }
+            else
+            {
+                $password_error = "The passwords do not match!";
+            }
         }
         else
         {
@@ -239,18 +294,120 @@
                     echo "</table>";
                 ?>
         </div>
+
+        <div id="box"> <!-- Admin Info updater form -->
+            <form method="POST">               
+                <br><br>
+                <div style="font-size: 25px; margin-bottom: 15px">Update Info</div>
+                
+                First Name
+                <input id="text" type="text" name="first_name" value="<?php echo isset($_POST['first_name']) ? $_POST['first_name'] : $user_data['first_name'] ?>" required><br><br>
+                Last Name
+                <input id="text" type="text" name="last_name" value="<?php echo isset($_POST['last_name']) ? $_POST['last_name'] : $user_data['last_name'] ?>" required><br><br>
+                Email
+                <input id="text" type="text" name="email" value="<?php echo isset($_POST['email']) ? $_POST['email'] : $user_data['email'] ?>" required><br><br>
+                Phone
+                <input id="text" type="text" name="phone" value="<?php echo isset($_POST['phone']) ? $_POST['phone'] : $user_data['phone'] ?>"><br><br>
+                Street Address
+                <input id="text" type="text" name="address" value="<?php echo isset($_POST['address']) ? $_POST['address'] : $user_data['address'] ?>" required><br><br>
+                City
+                <input id="text" type="text" name="city" value="<?php echo isset($_POST['city']) ? $_POST['city'] : $user_data['city'] ?>" required><br><br>
+                State
+                <br>
+                <select id="text" name="state" value="<?php echo isset($_POST['state']) ? $_POST['state'] : $user_data['state'] ?>" required>
+                    <option disabled selected><?php echo isset($_POST['state']) ? $_POST['state'] : $user_data['state'] ?></option>
+                    <option value="AL">Alabama</option>
+                    <option value="AK">Alaska</option>
+                    <option value="AZ">Arizona</option>
+                    <option value="AR">Arkansas</option>
+                    <option value="CA">California</option>
+                    <option value="CO">Colorado</option>
+                    <option value="CT">Connecticut</option>
+                    <option value="DE">Delaware</option>
+                    <option value="DC">Washington DC</option>
+                    <option value="FL">Florida</option>
+                    <option value="GA">Georgia</option>
+                    <option value="HI">Hawaii</option>
+                    <option value="ID">Idaho</option>
+                    <option value="IL">Illinois</option>
+                    <option value="IN">Indiana</option>
+                    <option value="IA">Iowa</option>
+                    <option value="KS">Kansas</option>
+                    <option value="KY">Kentucky</option>
+                    <option value="LA">Louisiana</option>
+                    <option value="ME">Maine</option>
+                    <option value="MD">Maryland</option>
+                    <option value="MA">Massachusetts</option>
+                    <option value="MI">Michigan</option>
+                    <option value="MN">Minnesota</option>
+                    <option value="MS">Mississippi</option>
+                    <option value="MO">Missouri</option>
+                    <option value="MT">Montana</option>
+                    <option value="NE">Nebraska</option>
+                    <option value="NV">Nevada</option>
+                    <option value="NH">New Hampshire</option>
+                    <option value="NJ">New Jersey</option>
+                    <option value="NM">New Mexico</option>
+                    <option value="NY">New York</option>
+                    <option value="NC">North Carolina</option>
+                    <option value="ND">North Dakota</option>
+                    <option value="OH">Ohio</option>
+                    <option value="OK">Oklahoma</option>
+                    <option value="OR">Oregon</option>
+                    <option value="PA">Pennsylvania</option>
+                    <option value="RI">Rhode Island</option>
+                    <option value="SC">South Carolina</option>
+                    <option value="SD">South Dakota</option>
+                    <option value="TN">Tennessee</option>
+                    <option value="TX">Texas</option>
+                    <option value="UT">Utah</option>
+                    <option value="VT">Vermont</option>
+                    <option value="VA">Virginia</option>
+                    <option value="WA">Washington</option>
+                    <option value="WV">West Virginia</option>
+                    <option value="WI">Wisconsin</option>
+                    <option value="WY">Wyoming</option>
+                </select>
+                <br><br> 
+                Zip
+                <input id="text" type="text" name="zip" value="<?php echo isset($_POST['zip']) ? $_POST['zip'] : $user_data['zip'] ?>" required><br><br>
+                <?php echo $info_error ?><br>
+                <input id="button" name="info" type="submit" value="Update"><br><br>
+            </form>
+            <form method="POST">
+            <br><br>
+                <div style="font-size: 25px; margin-bottom: 15px">Change Password</div>
+                
+                New Password
+                <input id="text" type="password" name="password" value="<?php echo isset($_POST['password']) ? $_POST['password'] : '' ?>" required><br><br>
+                Confirm New Password
+                <input id="text" type="password" name="new_password" value="<?php echo isset($_POST['new_password']) ? $_POST['new_password'] : '' ?>" required><br><br>
+                
+                <?php echo $password_error ?><br>
+                <input id="button" name="newPass" type="submit" value="Change"><br><br>
+            </form>
+       </div>
         
       <div class="footer">
             <!-- This is where the contact info is-->
             <center><p class="paragraph">
                 Contact Info:
                 <br>
-                raeRidingLessons@admin.com
-                <br>
-                (843)-867-5309
-                <br>
-                 325 Some Address Ln., North Charleston, SC, 29405
-                 <br> <br> <br>
+                <?php 
+                    $busInfo = "SELECT email, phone, address, city, state, zip FROM `users` WHERE admin=1";
+
+                    $res = mysqli_query($con, $busInfo);
+                    $busRow = mysqli_fetch_array($res, MYSQLI_ASSOC);
+                    $busPhone = $busRow['phone'];
+
+                    echo $busRow['email'];
+                    echo "<br>";
+                    echo "(", substr($busPhone, 0, 3), ")-", substr($busPhone, 3, 3), "-", substr($busPhone, 6, 4);
+                    echo "<br>";
+                    // 325 Some Address Ln., North Charleston, SC, 29405
+                    echo $busRow['address'], ", ", $busRow['city'], ", ", $busRow['state'], ", ", $busRow['zip'];
+                ?>
+                <br> <br> <br>
                 Copyright 2022 by Blue Team. All Rights Reserved
                 <br>
               </p></center>

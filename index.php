@@ -60,7 +60,7 @@
             <div class="column">
             <p class='h2Edits'>
             <?php
-                    $newsQuery = "SELECT news FROM `users` WHERE user_id=92233";
+                    $newsQuery = "SELECT news FROM `users` WHERE admin=1";
 
                     $news = mysqli_query($con, $newsQuery);
                     $newsRow = mysqli_fetch_array($news, MYSQLI_ASSOC);
@@ -82,11 +82,20 @@
             <center><p class="paragraph">
               Contact Info:
               <br>
-              raeRidingLessons@admin.com
-              <br>
-              (843)-867-5309
-              <br>
-              325 Some Address Ln., North Charleston, SC, 29405
+              <?php 
+                    $busInfo = "SELECT email, phone, address, city, state, zip FROM `users` WHERE admin=1";
+
+                    $res = mysqli_query($con, $busInfo);
+                    $busRow = mysqli_fetch_array($res, MYSQLI_ASSOC);
+                    $busPhone = $busRow['phone'];
+
+                    echo $busRow['email'];
+                    echo "<br>";
+                    echo "(", substr($busPhone, 0, 3), ")-", substr($busPhone, 3, 3), "-", substr($busPhone, 6, 4);
+                    echo "<br>";
+                    // 325 Some Address Ln., North Charleston, SC, 29405
+                    echo $busRow['address'], ", ", $busRow['city'], ", ", $busRow['state'], ", ", $busRow['zip'];
+                ?>
               <br> <br> <br>
               Copyright 2022 by Blue Team. All Rights Reserved
               <br>
