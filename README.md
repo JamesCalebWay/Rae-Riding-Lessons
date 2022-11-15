@@ -13,7 +13,7 @@ Rae Riding Lessons
 
 [Rae Riding Lessons](http://raeridinglessons.infinityfreeapp.com/) is website designed so that users can signup for horse riding lessons. 
 
-Once a user registersfor an account, they can veiw a calendar of lessons that are available to them based on the their skill level. The user can then sign up for the lesson which will be added to another calendar on the user's profile page. Additionally, an admin can make changes to the user's skill level, make a user an admin, make notes about users, add news to the home page, and add new lessons for users.
+Once a user registers for an account, they can veiw a calendar of lessons that are available to them based on the their skill level. The user can then sign up for the lesson which will be added to another calendar on the user's profile page. Additionally, an admin can make changes to the user's skill level, make a user an admin, make notes about users, add news to the home page, and add new lessons for users.
 
 ## How to use the website
 
