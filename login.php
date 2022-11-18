@@ -1,3 +1,11 @@
+<!-- Student Name: James Caleb Way
+Program Name: Rae Riding Lessons
+Creation Date: 9/17/2022
+Last Modified Date: 11/9/2022
+CSCI Course: CSCI 495
+Grade Received: TBA
+Design Comments: Paul McGlothlin improved the input feilds. Making the required and added input checking with error messages -->
+
 <?php
     session_start();
 
