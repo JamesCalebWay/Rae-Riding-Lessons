@@ -1,3 +1,11 @@
+<!-- Student Name: James Caleb Way
+Program Name: Rae Riding Lessons
+Creation Date: 9/17/2022
+Last Modified Date: 11/9/2022
+CSCI Course: CSCI 495
+Grade Received: TBA
+Design Comments: Karina Quick created the footer and populated the page with content. -->
+
 <?php
     session_start();
     $_SESSION['url'] = $_SERVER['REQUEST_URI'];
