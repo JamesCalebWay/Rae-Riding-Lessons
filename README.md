@@ -4,7 +4,7 @@ Rae Riding Lessons
 ===============
 
 -   **Class: CSCI 495** 
--   **Grade: TBA** 
+-   **Grade: 85** 
 -   **Language(s): HTML, CSS, JS, PHP, and MySQL**
 -   **Source Code Repository:** [Rae-Riding-Lessons](https://github.com/JamesCalebWay/Rae-Riding-Lessons)
     (Please [email me](mailto:jcway@csustudent.net?subject=GitHub%20Access) to request access.)
