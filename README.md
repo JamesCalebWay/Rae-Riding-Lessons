@@ -1,5 +1,3 @@
-[Back to Portfolio](./)
-
 Rae Riding Lessons
 ===============
 
@@ -66,7 +64,3 @@ Fig 10. News and user list
 ## Additional Considerations
 
 [Rae Riding Lessons](http://raeridinglessons.infinityfreeapp.com/) is hosted by [InfinityFree](https://www.infinityfree.net/). The back end utilizes MySQL Databases which is also hosted by InfinityFree.
-
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
-
-[Back to Portfolio](./)
